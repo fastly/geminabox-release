@@ -11,11 +11,6 @@ Gem::Specification.new do |spec|
   spec.description   = 'Dependency free rake release task for geminabox'
   spec.summary       = 'see readme'
   spec.license       = "MIT"
-
-  spec.files         = Dir["lib/**/*"]
-  spec.files        += [".gitignore", ".ruby-version", "Gemfile", "geminabox-release.gemspec", "README.md", "Rakefile", "LICENSE"]
+  spec.files        += `git ls-files -z`.split("\x0")
   spec.require_paths = ["lib"]
-
 end
-
-
